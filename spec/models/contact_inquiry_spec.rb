@@ -37,4 +37,11 @@ describe ContactInquiry do
     expect(inquiry).to_not be_valid
     expect(inquiry.errors[:last_name]).to include "can't be blank"
   end
+
+  it 'checks if the email is valid' do
+    inquiry_1 = ContactInquiry.new(valid_attrs.merge(email: '@drubio.com'))
+    inquiry_2 = ContactInquiry.new(valid_attrs)
+    expect(inquiry_1).to_not be_valid
+    expect(inquiry_2).to be_valid
+  end
 end

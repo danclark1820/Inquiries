@@ -13,7 +13,17 @@ feature "User submits contact inquiry", %q{
 # * I must specify a last nameri
 
   context "with valid attributes" do
-    it "creates an issue with valid attributes"
+    it "creates an issue with valid attributes" do
+      visit '/contact_inquiries/new'
+
+      fill_in "email", with: "mike@boerger.com"
+      fill_in "subject", with: "Curiosity"
+      fill_in "description", with: "I have a question"
+      fill_in "first name", with: "Mike"
+      fill_in "last name", with: "Boerger"
+
+      expect(page).to have_content "Inquiry was succesfully created"
+    end
   end
 
   context "with invalid attributes" do
