@@ -10,7 +10,7 @@ feature "User submits contact inquiry", %q{
 # * I must specify a valid email address
 # * I must specify a subject
 # * I must specify a first name
-# * I must specify a last name
+# * I must specify a last nameri
 
   context "with valid attributes" do
     it "creates an issue with valid attributes"
