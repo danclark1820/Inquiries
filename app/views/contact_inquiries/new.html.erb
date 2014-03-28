@@ -1,0 +1,9 @@
+<h1>H1 stuff</h1>
+<%= simple_form_for @contact_inquiries do |f| %>
+  <%= f.input :email %>
+  <%= f.input :subject %>
+  <%= f.input :description %>
+  <%= f.input :first_name, label: 'First Name' %>
+  <%= f.input :last_name, label: 'Last Name' %>
+  <%= f.button :submit, 'Create Contact Inquiry' %>
+<% end %>
