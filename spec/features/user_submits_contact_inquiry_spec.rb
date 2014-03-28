@@ -21,7 +21,7 @@ feature "User submits contact inquiry", %q{
       fill_in "Description", with: "I have a question"
       fill_in "First Name", with: "Mike"
       fill_in "Last Name", with: "Boerger"
-      open_and_show_page
+
       click_on "Create Contact Inquiry"
 
       expect(page).to have_content "Inquiry was succesfully created"
