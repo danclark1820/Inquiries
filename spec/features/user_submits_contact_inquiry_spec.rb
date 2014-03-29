@@ -10,7 +10,7 @@ feature "User submits contact inquiry", %q{
 # * I must specify a valid email address
 # * I must specify a subject
 # * I must specify a first name
-# * I must specify a last nameri
+# * I must specify a last name
 
   context "with valid attributes" do
     it "creates an issue with valid attributes" do
@@ -21,7 +21,6 @@ feature "User submits contact inquiry", %q{
       fill_in "Description", with: "I have a question"
       fill_in "First Name", with: "Mike"
       fill_in "Last Name", with: "Boerger"
-
       click_on "Create Contact Inquiry"
 
       expect(page).to have_content "Inquiry was succesfully created"
@@ -29,6 +28,10 @@ feature "User submits contact inquiry", %q{
   end
 
   context "with invalid attributes" do
-    it "sees errors for invalid attributes"
+    it "sees errors for invalid attributes" do
+      visit '/contact_inquiries/new'
+      click_on "Create Contact Inquiry"
+      expect(page).to have_content "Please fill out required fields"
+    end
   end
 end
