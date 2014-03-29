@@ -26,6 +26,10 @@ class ContactInquiriesController < ApplicationController
   def edit
   end
 
+  def destroy
+    redirect_to contact_inquiries_path
+  end
+
   def inquiry_params
     params.require(:contact_inquiry).permit(:email, :subject, :description, :first_name, :last_name)
   end
