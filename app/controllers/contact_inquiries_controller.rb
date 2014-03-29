@@ -24,6 +24,7 @@ class ContactInquiriesController < ApplicationController
   end
 
   def edit
+    @contact_inquiry = ContactInquiry.find(params[:id])
   end
 
   def destroy
