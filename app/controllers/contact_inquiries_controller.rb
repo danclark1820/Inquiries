@@ -24,7 +24,6 @@ class ContactInquiriesController < ApplicationController
   end
 
   def edit
-    @contact_inquiry = ContactInquiry.new(inquiry_params)
   end
 
   def inquiry_params
